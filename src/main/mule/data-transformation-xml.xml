@@ -15,7 +15,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 		<file:connection workingDir="C:\Users\abesh\Desktop\Mule Soft\Data-transormation\output" />
 	</file:config>
 	<flow name="data-transformation-xmlFlow" doc:id="1a11e0e0-99c4-4f0b-9d8b-42c0e698e9e1" >
-		<file:listener doc:name="On New or Updated File" doc:id="bd66bfe3-8acd-4d31-8a35-6cbb18e4728b" directory="C:\Users\abesh\Desktop\Mule Soft\Data-transormation\input" timeBetweenSizeCheckUnit="DAYS" autoDelete="true" moveToDirectory="C:\Users\abesh\Desktop\Mule Soft\Data-transormation\backup" renameTo="#[&quot;backup-&quot; ++ now() as String {format: 'y-M-d-h-m-s'} ++ vars.fileName]" outputMimeType="application/xml">
+		<file:listener doc:name="On New or Updated File" doc:id="bd66bfe3-8acd-4d31-8a35-6cbb18e4728b" directory="C:\Users\abesh\Desktop\Mule Soft\Data-transormation\input" timeBetweenSizeCheckUnit="DAYS" autoDelete="true" moveToDirectory="C:\Users\abesh\Desktop\Mule Soft\Data-transormation\backup" renameTo="#[&quot;backup-&quot; ++ now() as String {format: 'y-M-d-h-m-s'} ++ vars.fileName]" outputMimeType="application/xml" doc:description="This is a trigger and it starts the flow when there is a new file in the specified folder. ">
 			<scheduling-strategy >
 				<fixed-frequency frequency="10" timeUnit="SECONDS"/>
 			</scheduling-strategy>
